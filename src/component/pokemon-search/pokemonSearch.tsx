@@ -42,7 +42,7 @@ export class PokemonSearch extends Component<Result, SearchState> {
                 <div>
                     <img src={pokemon.imageUrl} alt="pokemon" className="pokemon-image"/>
                     <p>
-                        {name} has {pokemon.numberOfAbilites} abilities and{' '}
+                        {pokemon.name} has {pokemon.numberOfAbilites} abilities and{' '}
                         {pokemon.baseExperience} base experience points
                     </p>
                 </div>
@@ -51,13 +51,13 @@ export class PokemonSearch extends Component<Result, SearchState> {
     }
 
     render() {
-        const {name: userName, numberOfPokemons} = this.props;
+        const {name, numberOfPokemons} = this.props;
         const {error, pokemon} = this.state;
 
         return (
             <div>
                 <p>
-                    User {userName}{' '}
+                    User {name}{' '}
                     {numberOfPokemons && <span>has {numberOfPokemons} pokemons</span>}
                 </p>
                 <input type="text" ref={this.pokemonRef}/>

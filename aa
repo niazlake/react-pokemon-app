@@ -1,0 +1,39 @@
+[1mdiff --git a/src/App.tsx b/src/App.tsx[m
+[1mindex 214b852..a2dc4e1 100644[m
+[1m--- a/src/App.tsx[m
+[1m+++ b/src/App.tsx[m
+[36m@@ -1,5 +1,4 @@[m
+ import React from 'react';[m
+[31m-import logo from './logo.svg';[m
+ import './App.css';[m
+ import { PokemonSearch } from './component/pokemon-search/pokemonSearch';[m
+ [m
+[1mdiff --git a/src/component/pokemon-search/pokemonSearch.tsx b/src/component/pokemon-search/pokemonSearch.tsx[m
+[1mindex 53ca538..cbd696b 100644[m
+[1m--- a/src/component/pokemon-search/pokemonSearch.tsx[m
+[1m+++ b/src/component/pokemon-search/pokemonSearch.tsx[m
+[36m@@ -42,7 +42,7 @@[m [mexport class PokemonSearch extends Component<Result, SearchState> {[m
+                 <div>[m
+                     <img src={pokemon.imageUrl} alt="pokemon" className="pokemon-image"/>[m
+                     <p>[m
+[31m-                        {name} has {pokemon.numberOfAbilites} abilities and{' '}[m
+[32m+[m[32m                        {pokemon.name} has {pokemon.numberOfAbilites} abilities and{' '}[m
+                         {pokemon.baseExperience} base experience points[m
+                     </p>[m
+                 </div>[m
+[36m@@ -51,13 +51,13 @@[m [mexport class PokemonSearch extends Component<Result, SearchState> {[m
+     }[m
+ [m
+     render() {[m
+[31m-        const {name: userName, numberOfPokemons} = this.props;[m
+[32m+[m[32m        const {name, numberOfPokemons} = this.props;[m
+         const {error, pokemon} = this.state;[m
+ [m
+         return ([m
+             <div>[m
+                 <p>[m
+[31m-                    User {userName}{' '}[m
+[32m+[m[32m                    User {name}{' '}[m
+                     {numberOfPokemons && <span>has {numberOfPokemons} pokemons</span>}[m
+                 </p>[m
+                 <input type="text" ref={this.pokemonRef}/>[m
